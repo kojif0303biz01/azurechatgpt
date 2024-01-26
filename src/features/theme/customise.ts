@@ -1,3 +1,2 @@
-//export const AI_NAME = "Prudencia GPT";
+export const AI_NAME = "ChatGPT on Azure solution accelerator";
 
-export const AI_NAME = process.env.CHATNAME
