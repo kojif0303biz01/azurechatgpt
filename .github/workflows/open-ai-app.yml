@@ -25,9 +25,12 @@ jobs:
           npm install
           npm run build --if-present
           cd ..
+          echo "npm install finished"
 
       - name: 📂 Create deployment directories
-        run: mkdir -p ./site-deploy
+        run: | 
+          mkdir -p ./site-deploy 
+          echo "create ./site-deploy"
 
       - name: 📂 Copy standalone into the root
         run: cp -R ./src/.next/standalone ./site-deploy
@@ -36,12 +39,16 @@ jobs:
         run: cp -R ./src/.next/static ./site-deploy/.next/static
 
       - name: 📂 Copy Public folder
-        run: cp -R ./src/public ./site-deploy/public
+        run: |
+          cp -R ./src/public ./site-deploy/public
+          echo "Copy publish folder finished"
+
 
       - name: 📦 Package Next application
         run: |
           cd ./site-deploy
           zip Nextjs-site.zip ./* .next -qr || { echo "Error: Failed to create ZIP file"; exit 1; }
+          echo "zip Nextjs finished"
 
       - name: 🔍 Verify ZIP file
         run: |
