@@ -41,7 +41,7 @@ jobs:
       - name: 📦 Package Next application
         run: |
           cd ./site-deploy
-          zip Nextjs-site.zip ./* .next -qr
+          zip Nextjs-site.zip ./* .next -qr || { echo "Error: Failed to create ZIP file"; exit 1; }
 
       - name: 🔍 Verify ZIP file
         run: |
