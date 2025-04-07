@@ -42,7 +42,12 @@ jobs:
         run: |
           cp -R ./src/public ./site-deploy/public
           echo "Copy publish folder finished"
-
+          
+      - name: Debug Info
+        run: |
+          echo "Printing debug information"
+          uname -a
+          env
 
       - name: 📦 Package Next application
         run: |
