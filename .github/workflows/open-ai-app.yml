@@ -32,6 +32,9 @@ jobs:
           mkdir -p ./site-deploy 
           echo "create ./site-deploy"
 
+      - name: 📂 Create .next directory
+        run: mkdir -p ./site-deploy/.next
+
       - name: 📂 Copy standalone into the root
         run: cp -R ./src/.next/standalone ./site-deploy
 
