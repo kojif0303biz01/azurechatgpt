@@ -65,7 +65,7 @@ jobs:
           fi
 
       - name: ⬆️ Publish Next Application artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Nextjs-site
           path: ./site-deploy/Nextjs-site.zip
